@@ -1,23 +1,42 @@
 #include  <Servo.h>
 Servo myServo;
 
-int const potPin = A0;
-int potVal;
-int angle;
+int const butPin = 7;
+int angle1 = 45;
+int angle2 = 135;
 
 void setup() {
+  pinMode(butPin, INPUT);
   myServo.attach(9);
 
   Serial.begin(9600);
 }
 
 void loop() {
-  potVal = analogRead(potPin);
-  Serial.print("potVal: ");
-  Serial.print(potVal);
-  angle = map(potVal, 0 , 1023, 0, 179);
-  Serial.print("/n angle: ");
-  Serial.println(angle);
-  myServo.write(angle);
-  delay(15);
+  wave();
+  Serial.println("hiiiii");
+  exit(0);
+
+}
+
+// wave for 2 seconds when wave is called
+void wave(){
+  int time = 0;
+
+  while (time < 5000){
+    Serial.print("time: ");
+    Serial.println(time);
+    myServo.write(angle1);
+    // Serial.print("angle: ");
+    // Serial.println(angle1);
+    delay(30);
+    
+    myServo.write(angle2);
+    // Serial.print("angle: ");
+    // Serial.println(angle2);
+    delay(30);
+
+    time+=60;
+  }
+
 }
