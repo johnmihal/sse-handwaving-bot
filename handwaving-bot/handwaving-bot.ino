@@ -13,17 +13,16 @@ void setup() {
 }
 
 void loop() {
-  wave();
-  Serial.println("hiiiii");
-  exit(0);
-
+  if (digitalRead(butPin) == HIGH){
+    wave();
+  }
 }
 
 // wave for 2 seconds when wave is called
 void wave(){
   int time = 0;
 
-  while (time < 5000){
+  while (time < 10000){
     Serial.print("time: ");
     Serial.println(time);
     myServo.write(angle1);
