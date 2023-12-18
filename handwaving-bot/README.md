@@ -4,6 +4,8 @@ This little creature waves at passerbys. It is triggered either by a motion dete
 
 The motion detector is a HiLetgo HC-SR501 PIR Infared IR Sensor.
 
+#### Important: The sensor takes a few minute to calibrate when the circuit is powered. Cover the sensor for a few minutes when powering on, otherwise the sensor will go off randomly.
+
 ## Circuit:
 
 ![pictue of circuit](IMG_4110.jpg)
